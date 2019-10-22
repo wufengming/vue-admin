@@ -1,0 +1,48 @@
+{
+     //.vue文件template格式化支持，并使用js-beautify-html插件
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatterOptions": {
+    // 对属性进行换行。
+    // - auto: 仅在超出行长度时才对属性进行换行。
+    // - force: 对除第一个属性外的其他每个属性进行换行。
+    // - force-aligned: 对除第一个属性外的其他每个属性进行换行，并保持对齐。
+    // - force-expand-multiline: 对每个属性进行换行。
+    // - aligned-multiple: 当超出折行长度时，将属性进行垂直对齐。
+    "js-beautify-html": {
+      "wrap_line_length": 120,
+      "wrap_attributes": "auto",
+      "end_with_newline": false
+    },
+    "prettier": {
+      "semi": false, //不使用分号结尾
+      "singleQuote": true, //使用单引号
+      "eslintIntegration": true  //开启 eslint 支持
+    }
+  },
+  //根据文件后缀名定义vue文件类型
+  "files.associations": {
+    "*.vue": "vue"
+  },
+  //保存自动格式化
+  "editor.formatOnSave": true,
+  //配置 ESLint 检查的文件类型
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue-html",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "aotoFix": true
+    }
+  ],
+  "eslint.run": "onSave",
+  //保存时eslint自动修复错误
+  "eslint.autoFixOnSave": true,
+  "files.autoSave": "afterDelay"
+
+
+}
